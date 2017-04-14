@@ -8,7 +8,6 @@ Vagrant.configure("2") do |config|
 		end
 		client.vm.network :private_network, ip: "192.168.7.6"
 		client.vm.hostname = "client"
-		#config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-		#client.vm.provision :shell, :path=> 'setup.sh'
+		client.vm.provision "shell", path: "setup.sh"
 	end
 end
